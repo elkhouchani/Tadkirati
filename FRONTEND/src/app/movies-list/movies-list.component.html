@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <h5>Movies List</h5>
+      <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Rating</th>
+          <!-- Add more columns as needed for your MovieModel properties -->
+        </tr>
+        </thead>
+        <tbody *ngFor="let movie of movies">
+        <tr>
+          <td>{{ movie.name }}</td>
+          <td>{{ movie.rating }}</td>
+          <!-- Add more cells as needed for your MovieModel properties -->
+          <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="deleteMovie(movie)">DELETE</a></td>
+          <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/edit-movie', movie.Id]">EDIT</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

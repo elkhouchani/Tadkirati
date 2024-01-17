@@ -1,0 +1,34 @@
+<div class="container">
+  <div>
+    <h2>Ticket Event</h2>
+  </div>
+  <form >
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+      <label >Ticket ID</label>
+      <input type="number"
+             [(ngModel)] = "currentMovie.Id"
+             name = "Id"
+             class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Ticket Name</label>
+      <input type="text"
+             [(ngModel)] = "currentMovie.name"
+             name = "Name"
+             class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Ticket Name</label>
+      <input type="text"
+             [(ngModel)] = "currentMovie.rating"
+             name = "rating"
+             class="form-control">
+    </div>
+
+
+
+    <div class="mt-2">
+      <button type="submit" (click)="updateMovie()"  class="btn btn-success">Update</button>
+    </div>
+  </form>
+</div>
